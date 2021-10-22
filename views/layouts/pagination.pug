@@ -1,13 +1,9 @@
-.o-grid-row(data-o-grid-colspan='center 12 S10 M8 L8')
-  .o-buttons-pagination
-    a.o-buttons.o-buttons--big.o-buttons--secondary.o-buttons-icon.o-buttons-icon--arrow-left.o-buttons-icon--icon-only(href='#')
-      span.o-buttons-icon__label Fewer results
-    a.o-buttons.o-buttons--big.o-buttons--secondary(href='#') 1
-    a.o-buttons.o-buttons--big.o-buttons--secondary(href='#' aria-current='page') 2
-    a.o-buttons.o-buttons--big.o-buttons--secondary(href='#') 3
-    span.o-buttons-pagination__ellipsis.o-buttons-pagination__ellipsis--big ...
-    a.o-buttons.o-buttons--big.o-buttons--secondary(href='#') 18
-    a.o-buttons.o-buttons--big.o-buttons--secondary(href='#') 19
-    a.o-buttons.o-buttons--big.o-buttons--secondary(href='#') 20
-    a.o-buttons.o-buttons--big.o-buttons--secondary.o-buttons-icon.o-buttons-icon--arrow-right.o-buttons-icon--icon-only(href='#')
-      span.o-buttons-icon__label More results
+.o-grid-row
+  div(data-o-grid-colspan='one-third center')
+    .o-buttons-pagination
+    if pagination.hasPrevious
+      a.o-buttons.o-buttons--big.o-buttons--secondary.o-buttons-icon.o-buttons-icon--arrow-left.o-buttons-icon--icon-only(href=`/search?q=${term}&index=${pagination.previousIndex}`)
+        span.o-buttons-icon__label Fewer results
+    if pagination.hasNext
+      a.o-buttons.o-buttons--big.o-buttons--secondary.o-buttons-icon.o-buttons-icon--arrow-right.o-buttons-icon--icon-only(href=`/search?q=${term}&index=${pagination.nextIndex}`)
+        span.o-buttons-icon__label More results
