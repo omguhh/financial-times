@@ -25,7 +25,6 @@ jobs:
       if: type = push
       script:
         - npm run test
-        - npm run validate-loc
       deploy:
         provider: heroku
         api_key:
