@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - 14
+install: npm install
+script:
+  - echo "**** STARTING BUILD*****"
+  - echo "Installing Dependencies"
+  - npm install
+  - echo "Running tests"
+  - echo "Deploying project"
+  - npm start
+deploy:
+  provider: heroku
+  api_key:
+    secure: HEROKU_API_KEY
