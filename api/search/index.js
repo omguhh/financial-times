@@ -21,6 +21,7 @@ const search = async (term, page) => {
     console.log('SUCCESS');
   } catch (error) {
     console.log('ERROR RESPONSE', error.response.data);
+    throw error;
   }
   return searchResult;
 };
