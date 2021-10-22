@@ -4,14 +4,25 @@ node_js: 14.17.6
 cache:
   directories:
     - node_modules
+stages:
+  - test
+  - deploy
 
-script:
-  - echo 'Build starts!!'
-  - echo 'Installing Deps!'
-  - npm install
-  - echo 'Testingzzz!'
-
-deploy:
-  provider: heroku
-  api_key:
-    secure: HEROKU_API_KEY
+jobs:
+  include:
+    - stage: test
+      if: branch = main
+      script:
+        - npm install
+        - npm run test
+    - stage: deploy
+      if: type = push
+      script:
+        - npm install
+        - npm run test
+        - npm run validate-loc
+      deploy:
+        provider: heroku
+        api_key:
+          secure: $HEROKU_API_KEY
+        app: yas-financial-times
