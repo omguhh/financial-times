@@ -21,9 +21,10 @@ app.get('/', (req, res) => {
 
 app.get('/search', async (req, res) => {
   const { q: term, index = 0 } = req.query;
-  const data = await search(term, index);
-  const { results, page, total } = data;
-  res.render('index', { term, results, page, total });
+  const indexOffset = Math.max(0, parseInt(index, 10));
+  const data = await search(term, indexOffset);
+  const { results, pagination } = data;
+  res.render('index', { term, results, pagination, index });
 });
 
 app.listen(port, () => {
