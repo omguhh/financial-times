@@ -1,0 +1,8 @@
+.o-grid-row(data-o-grid-colspan='center 12 S10 M8 L8')
+    h2.o-typography-heading-level-2
+        | Search
+    span.o-forms-input.o-forms-input--text.o-forms-input--suffix.o-spacing-m12
+        input(type='text' name='text' value='' required='' placeholder='please enter a search term')
+        button.o-buttons.o-buttons--secondary.o-buttons--big Go
+    //- include results.pug
+    include empty.pug

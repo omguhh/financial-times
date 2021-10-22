@@ -1,0 +1,34 @@
+- var gridModule = "o-grid@^5.0.2";
+- var colorsModule = "o-colors@^5.0.6";
+- var typographyModule = "o-typography@^6.1.3";
+- var headerModule = "o-header@^8.0.2";
+- var footerModule = "o-footer@^7.0.2";
+- var editorialTypographyModule = "o-editorial-typography@^1.0.4";
+- var normalizeModule = "o-normalise@^2.0.1";
+- var spacingModule = "o-spacing@^2.0.0";
+- var formsModule = "o-forms@^8.3.12";
+- var buttonsModule = "o-buttons@^6.1.0";
+- var teaserCollectionModule = "o-teaser-collection@^3.0.5";
+- var teaserModule = "o-teaser@^5.2.1"
+
+- var styles = "https://www.ft.com/__origami/service/build/v2/bundles/css?modules=" + gridModule + "," + colorsModule + "," + typographyModule  + "," + headerModule + "," + footerModule + "," + editorialTypographyModule + "," + normalizeModule + "," + spacingModule + "," + formsModule + "," + teaserCollectionModule + "," + teaserModule + "," + buttonsModule;
+- var scripts = "https://www.ft.com/__origami/service/build/v2/bundles/js?modules=" + footerModule;
+
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  title Search | Financial Times
+  meta(name='description' content='Search page for the Financial Times')
+  meta(name='author' content='Yasmine')
+  meta(property='og:title' content='Search page for the Financial Times')
+  meta(property='og:type' content='website')
+  meta(property='og:description' content='Search page for the Financial Times')
+  link(rel='icon' href='/favicon.ico')
+  link(rel='icon' href='/favicon.svg' type='image/svg+xml')
+  link(rel='apple-touch-icon' href='/apple-touch-icon.png')
+  link(rel='stylesheet', href=styles)
+  
+  body.o-colors-page-background
+    include layouts/layout.pug
+script(src=scripts)
