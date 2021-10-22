@@ -8,19 +8,23 @@ stages:
   - test
   - deploy
 
+install:
+  - npm ci
 jobs:
   include:
     - stage: test
       if: branch = main
       script:
-        - npm install
         - npm run test
+      deploy:
+        provider: heroku
+        api_key:
+          secure: $HEROKU_API_KEY
+        app: yas-financial-times
     - stage: deploy
       if: type = push
       script:
-        - npm install
         - npm run test
-        - npm run validate-loc
       deploy:
         provider: heroku
         api_key:
