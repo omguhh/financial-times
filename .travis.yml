@@ -1,32 +1,17 @@
 language: node_js
 node_js: 14.17.6
-
 cache:
   directories:
-    - node_modules
+  - node_modules
 stages:
-  - test
-  - deploy
-
+- test
+- deploy
 install:
-  - npm ci
-jobs:
-  include:
-    - stage: test
-      if: branch = main
-      script:
-        - npm run test
-      deploy:
-        provider: heroku
-        api_key:
-          secure: $HEROKU_API_KEY
-        app: yas-financial-times
-    - stage: deploy
-      if: type = push
-      script:
-        - npm run test
-      deploy:
-        provider: heroku
-        api_key:
-          secure: $HEROKU_API_KEY
-        app: yas-financial-times
+- npm ci
+script:
+- npm run test
+deploy:
+  provider: heroku
+  api_key:
+    secure: EtKto+7KgX+1ay20iMrRSjuslJZ7t/GBmn8Do6dj7o5cQiE4/PUNZwdvkg746zxANHdA0gu/rsNf0FFGer0gq5dlrwe+hC1/5BYqhLwj3inPAB4y3WkkTO4Dy1qlnKlW0U3uPhxmEi/8SAqpC7emxWtsoyyseQ90cpcV5DLIBNWaqszyZEp9fOe+jjGtZ3OuiENCYMktSJE+Vd+ZUuea9qbaZYsrYBYKXaZJ67q4YnFd6f3Vm1yEvvCCXMtU3kB2dk00TX/UVlAqShwKwTyrzX6bbyAoV53au/aGWfltqRoUBMUjoH+y4WKUGZV2x3q/PDP97JwcSd2Gltwx09HHctY5l1Y5uJ1dxU1uJAfyQGfJ1ZmQrEAmRrQC33A1kUVaCqTjEC4XptPv3huE73psbELLYOBIO0OaA3d66qCEglO7augq1NrCi+XRBkqDvIdQUz3uIQfkDQs1ASGEHbV0cyY9/A+xg4NrwTn9/PAnw1cYEyBXBcspcrho3IQ2tEbJXsg/VH8/qV5DHhTka1I0wGWBwRUYCsVOXFZkS0wCWlgS/A00/nFOlQz81fyXtOqfN09Nft/zTJvBCwpOOiCW58EDrUTR5rc7OOmp9eBsbSiJBgjhU9i6mB3Ef4wyIzp4tE1xiNFrg3gJZUmFFkJrGmoA9Ku2S6zJ90kR0/te/Yw=
+  app: yas-financial-times
