@@ -5,7 +5,7 @@ script:
   - echo 'Build starts!!'
   - echo 'Installing Deps!'
   - npm install
-  - echo 'Testing!'
+  - echo 'Testingzzz!'
   - npm start
 deploy:
   provider: heroku
