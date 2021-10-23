@@ -26,30 +26,3 @@ test('[ENDPOINT][SEARCH] -- returns data object when search is called with corre
   axios.post = jest.fn().mockResolvedValue(response);
   expect(search('text', 1)).resolves.toEqual(result);
 });
-
-// test('[ENDPOINT][SEARCH] -- returns error when called with incorrect params', () => {
-//   const response = {
-//     data: {
-//       results: [
-//         {
-//           indexCount: 1,
-//           results: [
-//             {
-//               text: 'test',
-//             },
-//           ],
-//         },
-//       ],
-//     },
-//   };
-//   const result = {
-//     results: [{ text: test }],
-//     page: 0,
-//     total: 1,
-//   };
-
-//   axios.post = jest.fn().mockReturnValue(Promise.reject(result));
-//   expect(() => {
-//     search();
-//   }).toThrow(TypeError);
-// });

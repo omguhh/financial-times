@@ -1,3 +1,15 @@
+extends index
+
 block content
-.o-spacing-s8
-p error
+    .o-spacing-s8
+    .o-grid-container
+        .o-grid-row(data-o-grid-colspan='center 12 S10 M8 L8')
+            h1.o-typography-heading-level-1 Sorry
+            p.o-typography-body The page you are trying to access does not exist.
+            p.o-typography-body
+                | This might be because you have entered the web address incorrectly or the page has moved.
+            p.o-typography-body
+                | For help please visit 
+                a.o-typography-link.o-typography-link--external(href='https://help.ft.com') help.ft.com
+                | .
+            p.o-typography-body We apologise for any inconvenience.

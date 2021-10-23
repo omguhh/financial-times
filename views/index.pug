@@ -15,23 +15,23 @@
 - var scripts = "https://www.ft.com/__origami/service/build/v2/bundles/js?modules=" + footerModule;
 
 doctype html
-head
-  meta(charset='utf-8')
-  meta(name='viewport' content='width=device-width, initial-scale=1')
-  title Search | Financial Times
-  meta(name='description' content='Search page for the Financial Times')
-  meta(name='author' content='Yasmine')
-  meta(property='og:title' content='Search page for the Financial Times')
-  meta(property='og:type' content='website')
-  meta(property='og:description' content='Search page for the Financial Times')
-  link(rel='icon' href='/favicon.ico')
-  link(rel='icon' href='/favicon.svg' type='image/svg+xml')
-  link(rel='apple-touch-icon' href='/apple-touch-icon.png')
-  link(rel='stylesheet', href=styles)
-  
-  body.o-colors-page-background
-    include layouts/header.pug
-    block content
-      include layouts/layout.pug
-    include layouts/footer.pug
-script(src=scripts)
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    title Search | Financial Times
+    meta(name='description' content='Search page for the Financial Times')
+    meta(name='author' content='Yasmine')
+    meta(property='og:title' content='Search page for the Financial Times')
+    meta(property='og:type' content='website')
+    meta(property='og:description' content='Search page for the Financial Times')
+    link(rel='icon' href='/favicon.ico')
+    link(rel='icon' href='/favicon.svg' type='image/svg+xml')
+    link(rel='apple-touch-icon' href='/apple-touch-icon.png')
+    link(rel='preconnect stylesheet', href=styles)
+
+    body.o-colors-page-background
+      include layouts/header.pug
+      block content
+      include layouts/footer.pug
+  script(src=scripts)
