@@ -1,5 +1,5 @@
 const calculatePaginationObj = (index = 0, offset, totalResults) => {
-    /**
+  /**
    * Pagination needs to incretment offset until we reach the total
    * We will need to check if there is a next page or a previous page so we show the correct buttons
    * +
@@ -13,7 +13,7 @@ const calculatePaginationObj = (index = 0, offset, totalResults) => {
    * To get the previous index
    * 1. subtract the index - offset until you get to  0
    */
-  const currentIndex = index < totalResults ? index : totalResults;
+  const currentIndex = Math.min(index, totalResults);
   const nextOffset = currentIndex + offset;
   const previousOffset = currentIndex - offset;
   return {
